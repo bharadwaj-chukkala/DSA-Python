@@ -46,8 +46,8 @@ def implement(Num1, Num2, Operation):
     else:
         print("Please folow the instructions")
         exit(1)
-
-if __name__=="__main__":
+    
+def main():
     print("Please type what operation do you want me to perform?")
     print("add - Addition")
     print("sub - Subtraction")
@@ -73,4 +73,5 @@ if __name__=="__main__":
             implement(Num1, Num2, Operation)
             break
 
-    
+if __name__=="__main__":
+    main()
