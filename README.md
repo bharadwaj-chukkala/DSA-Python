@@ -1,6 +1,6 @@
 # DSA-Python
 
-# List of programs
+## List of programs
 
 - Adding two numbers
 - Subtracting two numbers
