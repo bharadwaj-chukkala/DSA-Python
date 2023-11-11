@@ -30,9 +30,24 @@ class Calculator:
     def sroot(self, Num1):
         return math.sqrt(Num1)
 
-if __name__=="__main__":
+def implement(Num1, Num2, Operation):
+    my_calculation = Calculator(Num1, Num2)
 
-    
+    if Operation == 'add':
+        print("The sum of two numbers is: ", my_calculation.add(Num1, Num2))
+    elif Operation == 'sub':
+        print("The difference of two numbers is: ", my_calculation.sub(Num1, Num2))
+    elif Operation == 'mul':
+        print("The product of two numbers is: ", my_calculation.mul(Num1, Num2))
+    elif Operation == 'div':
+        print("The Division of two numbers is: ", my_calculation.div(Num1, Num2))
+    elif Operation == 'sroot':
+        print("The square root of the number is: ", my_calculation.sroot(Num1))
+    else:
+        print("Please folow the instructions")
+        exit(1)
+
+if __name__=="__main__":
     print("Please type what operation do you want me to perform?")
     print("add - Addition")
     print("sub - Subtraction")
@@ -46,19 +61,16 @@ if __name__=="__main__":
             print("Please input the right term")
             continue
         else:
+            Num1 = input("Enter the first value: ")
+            Num2 = input("Enter the second number. Type 0 and press enter if you are just finding square root: ")
+            # If string has a "." in it, then it is a float
+            if "." in Num1 or "." in Num2:
+                Num1 = float(Num1)
+                Num2 = float(Num2)
+            else:
+                Num1 = int(Num1)
+                Num2 = int(Num2)
+            implement(Num1, Num2, Operation)
             break
 
-    Num1 = int(input("Enter the first value: "))
-    Num2 = int(input("Enter the second number. Just press enter if you are just finding square root: "))
-    my_calculation = Calculator(Num1, Num2)
-
-    if Operation == 'add':
-        print("The sum of two numbers is: ", my_calculation.add(Num1, Num2))
-    if Operation == 'sub':
-        print("The difference of two numbers is: ", my_calculation.sub(Num1, Num2))
-    if Operation == 'mul':
-        print("The product of two numbers is: ", my_calculation.mul(Num1, Num2))
-    if Operation == 'div':
-        print("The Division of two numbers is: ", my_calculation.div(Num1, Num2))
-    if Operation == 'sroot':
-        print("The square root of the number is: ", my_calculation.sroot(Num1))
+    
